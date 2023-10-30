@@ -9,7 +9,7 @@ import session.Session;
 public class CalendarTest {
     MainCalendar mainCalendar = new MainCalendar();
     @Test
-    public void verifyAddCalculator(){
+    public void verifyAddEvent(){
         String eventName = "Hola";
 
         mainCalendar.freeTrial.click();
