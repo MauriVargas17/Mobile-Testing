@@ -2,6 +2,7 @@ package control;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import session.Session;
 
 public class AppiumControl {
@@ -19,6 +20,21 @@ public class AppiumControl {
     public void click(){
         findControl();
         control.click();
+    }
+
+    public void longClick() {
+        findControl();
+
+        Actions actions = new Actions(Session.getSession().getDevice());
+        actions.clickAndHold(control).perform();
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        actions.release(control).perform();
     }
 
     public String getText(){
